@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main Page</title>
+    <style>
+      #navbar {
+        border: 0px solid red;
+        width: 100%;
+        height: 100px;
+        background-color: white;
+        color: black;
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        margin-top: -20px;
+      }
+      #box1 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        margin-left: 100px;
+      }
+      #menu {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        gap: 35px;
+        font-family: sans-serif;
+        font-size: 14px;
+      }
+      #box2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        margin-right: 140px;
+        gap: 10px;
+      }
+      #sign {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+        font-size: 14px;
+      }
+      #price {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        color: black;
+        font-family: sans-serif;
+        font-size: 14px;
+      }
+      #price > span {
+        margin-left: 35px;
+      }
+      #order {
+        border: 1px solid black;
+        width: 100%;
+        margin-top: 80px;
+        height: 80px;
+        display: flex;
+        position: fixed;
+
+        background-color: black;
+      }
+
+      #order > button {
+        background-color: #e4002b;
+      }
+      #pickup {
+        margin-left: 430px;
+        margin-top: 8px;
+      }
+      #btn {
+        margin-left: 10px;
+        background-color: #e4002b;
+        width: 150px;
+        border-radius: 100px;
+        margin-top: 10px;
+        height: 40px;
+        color: white;
+        padding-top: 9px;
+      }
+      #pickup > h3 {
+        font-size: 15px;
+        font-family: sans-serif;
+        text-align: center;
+        color: #ffffff;
+      }
+      #btn > span {
+        margin: 350px 20px 0px 40px;
+        text-align: center;
+      }
+      #welcome {
+        border: 0px solid black;
+        background-color: #f8f7f5;
+      }
+      #welcome > div {
+        margin-left: 200px;
+      }
+      #welcome > div:nth-child(1) {
+        width: 15%;
+        border: 0px solid red;
+      }
+      #welcome > div > img {
+        width: 100%;
+      }
+      #welcome > div > h3 {
+        font-family: sans-serif;
+        font-size: 35px;
+        color: #202124;
+        padding-bottom: 20px;
+      }
+
+      #browse {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        border: 0px solid black;
+      }
+      #category {
+        border: 0px solid red;
+        width: 400px;
+        margin-left: 200px;
+      }
+      #line {
+        width: 760px;
+        border: 0px solid #f8f7f5;
+        height: 1.5px;
+        background-color: #c0baae;
+        margin-top: 50px;
+        margin-right: 130px;
+      }
+
+      #category > h3 {
+        font-family: sans-serif;
+        font-size: 35px;
+        font-weight: bold;
+        color: #202124;
+      }
+      #container {
+        border: 0px solid red;
+        width: 80%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin-right: 50px;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+      }
+      #container > div {
+        width: 98%;
+      }
+
+      .image > img {
+        width: 100%;
+      }
+      .image + div {
+        height: 70px;
+        background-color: #f8f7f5;
+        text-align: center;
+        font-family: sans-serif;
+        font-weight: bold;
+        margin-top: -20px;
+      }
+      .image + div > p {
+        padding-top: 20px;
+      }
+      #body2 {
+        width: 100%;
+        border: 0px solid black;
+        margin-top: 120px;
+        background-color: #202124;
+      }
+      #line3 {
+        width: 100px;
+        border: 0px solid red;
+        margin-left: 250px;
+        background-color: #202124;
+      }
+      #deal {
+        border: 0px solid red;
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 250px;
+        margin-top: 70px;
+        color: #ffffff;
+        background-color: #202124;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      #deal > h2 {
+        font-size: 30px;
+      }
+      #deal > p {
+        margin-top: 30px;
+      }
+      #cards {
+        width: 85%;
+        margin: auto;
+        border: 0px solid red;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+        margin-left: 200px;
+        background-color: #202124;
+        border-radius: 20px;
+      }
+      #card1 {
+        width: 35%;
+        border: 1px solid red;
+        text-align: center;
+        margin-bottom: 60px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        background-color: #202124;
+      }
+
+      .imagecard {
+        width: 100%;
+        height: 100%;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+      }
+      .card1 > div:nth-child(2) {
+        color: #e4002b;
+        font-family: sans-serif;
+        font-size: 17px;
+        text-align: center;
+        background-color: #ffffff;
+        height: 100px;
+        margin-top: -40px;
+        padding-top: 20px;
+      }
+      .card1 > div:nth-child(3) {
+        width: 100%;
+        margin: auto;
+        background-color: #ffffff;
+        height: 60px;
+        margin-top: -20px;
+      }
+      .card1 > div:nth-child(3) > p {
+        margin: 5px 15px 5px 15px;
+      }
+      .card1 > div:nth-child(4) {
+        height: 60px;
+        border: 0px solid red;
+        display: flex;
+        justify-content: space-around;
+        background-color: #fdfcfb;
+        margin-bottom: 20px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+      .card1 > div:nth-child(4) > button > a {
+        color: #494949;
+        background-color: #ffffff;
+      }
+      .card1 > div:nth-child(4) > button:nth-child(1) {
+        background-color: #ffffff;
+        border: none;
+      }
+      .card1 > div:nth-child(4) > button:nth-child(2) {
+        color: #202124;
+        margin: 0px 0px 0px 5px;
+        padding: 11px 40px;
+        height: 45px;
+        margin-top: 7px;
+        border-radius: 23px;
+        border: 1px solid black;
+        background-color: #ffffff;
+      }
+      #footer {
+        border: 0px solid black;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        justify-content: space-around;
+        background-color: #202124;
+        color:#ffffff;
+        margin-top:-60px;
+        padding-top: 140px;
+        font-family: sans-serif;
+        padding-bottom: 100px;
+        font-size: 14px;
+      }
+      #footer > div:nth-child(7) {
+        width: 150px;
+        margin-right: 120px;
+      }
+      #footer > div:nth-child(7) > img {
+        width: 100%;
+      }
+      #footer > div:nth-child(8) {
+        width: 150px;
+        margin-left: -100px;
+      }
+      #footer > div:nth-child(8) > img {
+        width: 100%;
+      }
+      #footer > div:nth-child(7)>a{
+        text-decoration: none;
+        color:#ffffff;
+      }
+      #footer>div:nth-child(1){
+        margin-left: 90px;
+        margin-top: 10px;
+      }
+      #footer>div:nth-child(2){
+        margin-left: 50px;
+       
+      }
+      #footer>div:nth-child(3){
+        margin-left: 50px;
+       
+      }
+      #footer>div:nth-child(4){
+        margin-left: 50px;
+       
+      }
+      #footer>div:nth-child(5){
+        margin-left: 50px;
+       
+      }
+      #base{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        background-color: #202124;
+        border:0px solid red;
+        color: #ffffff;
+        font-family: sans-serif;
+        font-size: 12px;
+        text-align: center;
+      }
+      #base>div:nth-child(1){
+        margin-left: 450px;
+      }
+      #base>div:nth-child(2){
+        margin-left: 500px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="navbar">
+      <div id="box1">
+        <img src="https://online.kfc.co.in/static/media/kfcLogo.492728c6.svg" />
+        <span id="menu">
+          <h4>Menu</h4>
+          <h4>Deals</h4>
+        </span>
+      </div>
+      <div id="box2">
+        <div id="sign">
+          <img
+            src="https://images.ctfassets.net/wtodlh47qxpt/6bJdGLRkksNvWP4LI9ZiFF/cb89d6393492fd093e0f99980abfa39e/Account_Icon.svg"
+          />
+          <h4>Sign In</h4>
+        </div>
+        <div id="price">
+          <span class="headerPrice">₹0</span>
+          <img
+            src="//images.ctfassets.net/wtodlh47qxpt/6qtBVFuno7pdwOQ9RIvYm9/d13e9b7242980972cf49beddde2cc295/bucket_cart_icon.svg"
+            alt="Cart icon animation_100% "
+          />
+        </div>
+      </div>
+    </div>
+    <div id="order">
+      <div id="pickup">
+        <h3>LET'S ORDER FOR DELIVERY,PICK UP,OR DINE IN</h3>
+      </div>
+      <div id="btn">
+        <span>Start Order</span>
+      </div>
+    </div>
+
+    <div id="welcome">
+      <div>
+        <img
+          src="https://garden.spoonflower.com/c/1409551/p/f/m/oZ4hdkSB4YqdaC9Nyz7d4cxD26Tb_WEuUGqMKIFnSnP1gFymaaKBAA/Carnival%203%20inch%20red%20stripes.jpg"
+        />
+      </div>
+      <div>
+        <h3>WELCOME TO KFC!</h3>
+      </div>
+    </div>
+
+    <div id="browse">
+      <div id="category">
+        <h3>BROWSE CATEGORIES</h3>
+      </div>
+      <div id="line"></div>
+    </div>
+    <div id="container">
+      <div>
+        <div class="image">
+          <img
+            src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/categories/CAT86.jpg?ver=19.29"
+            alt=""
+            data-testid=""
+            class=""
+          />
+        </div>
+        <div>
+          <p>CHICKEN BUCKETs</p>
+        </div>
+      </div>
+      <div>
+        <div class="image">
+          <img
+            src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/categories/CAT200.jpg?ver=19.29"
+            alt=""
+            data-testid=""
+            class=""
+          />
+        </div>
+        <div>
+          <p>NEW LAUNCH</p>
+        </div>
+      </div>
+      <div>
+        <div class="image">
+          <img
+            src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/categories/CAT190.jpg?ver=19.29"
+            alt=""
+            data-testid=""
+            class=""
+          />
+        </div>
+        <div>
+          <p>BIRYANI BUCKETS</p>
+        </div>
+      </div>
+      <div>
+        <div class="image">
+          <img
+            src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/categories/CAT158.jpg?ver=19.29"
+            alt=""
+            data-testid=""
+            class=""
+          />
+        </div>
+        <div>
+          <p>BOX MEALS</p>
+        </div>
+      </div>
+      <div>
+        <div class="image">
+          <img
+            src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/categories/CAT99.jpg?ver=19.29"
+            alt=""
+            data-testid=""
+            class=""
+          />
+        </div>
+        <div>
+          <p>BURGERS</p>
+        </div>
+      </div>
+      <div>
+        <div class="image">
+          <img
+            src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/categories/CAT178.jpg?ver=19.29"
+            alt=""
+            data-testid=""
+            class=""
+          />
+        </div>
+        <div>
+          <p>STAY HOME SPECIALS</p>
+        </div>
+      </div>
+      <div>
+        <div class="image">
+          <img
+            src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/categories/CAT89.jpg?ver=19.29"
+            alt=""
+            data-testid=""
+            class=""
+          />
+        </div>
+        <div>
+          <p>SNACKS</p>
+        </div>
+      </div>
+      <div>
+        <div class="image">
+          <img
+            src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/categories/CAT92.jpg?ver=19.29"
+            alt=""
+            data-testid=""
+            class=""
+          />
+        </div>
+        <div>
+          <p>BEVERAGES</p>
+        </div>
+      </div>
+      <div>
+        <div class="image">
+          <img
+            src="http://cdn.shopify.com/s/files/1/0471/3965/1752/products/KFCProductThumbnail-13_1200x1200.jpg?v=1603813902"
+          />
+        </div>
+        <div>
+          <p>View All Menu --></p>
+        </div>
+      </div>
+    </div>
+    <div id="body2">
+      <div id="line3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="80"
+          height="42"
+          viewBox="0 0 80 42"
+          fill="none"
+          class="injected-svg"
+          data-src="/static/media/Stripes_Small_OffersIcon.87fc6256.svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <rect width="16.4103" height="41.0256" fill="#E4002B"></rect>
+          <rect
+            x="32.8203"
+            width="16.4103"
+            height="41.0256"
+            fill="#E4002B"
+          ></rect>
+          <rect
+            x="63.5898"
+            width="16.4103"
+            height="41.0256"
+            fill="#E4002B"
+          ></rect>
+        </svg>
+      </div>
+      <div id="deal">
+        <h2>OFFERS & DEALS</h2>
+        <p>View All Deals -></p>
+      </div>
+      <div id="cards">
+        <div class="card1">
+          <div>
+            <img
+              class="imagecard"
+              src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/offers/lg/CHKZINGER.jpg"
+              alt="No-Image"
+              class="offersImageText-background"
+            />
+          </div>
+          <div>
+            <h1>1PC FREE..</h1>
+          </div>
+          <div>
+            <p>
+              1 Pc free Chicken Zinger on a cart value of 399 or above on first
+              order. Only for...
+            </p>
+          </div>
+          <div>
+            <button><a href="form.html">View Details</a></button>
+            <button>Redeem</button>
+          </div>
+        </div>
+        <div class="card1">
+          <div>
+            <img
+              class="imagecard"
+              src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/offers/lg/VEGZINGER.jpg"
+              alt="No-Image"
+              class="offersImageText-background"
+            />
+          </div>
+          <div>
+            <h1>1PC FREE VEG..</h1>
+          </div>
+          <div>
+            <p>
+              1 Pc free Veg Zinger on a cart value of 399 or above on first...
+            </p>
+          </div>
+          <div>
+            <button><a href="form.html">View Details</a></button>
+            <button>Redeem</button>
+          </div>
+        </div>
+        <div class="card1">
+          <div>
+            <img
+              class="imagecard"
+              src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/offers/lg/ADDCHK99.jpg"
+              alt="No-Image"
+              class="offersImageText-background"
+            />
+          </div>
+          <div>
+            <h1>ADD 2 PC HOT...</h1>
+          </div>
+          <div>
+            <p>
+              1 Pc free Chicken Zinger on a cart value of 399 or above on first
+              order. Only for...
+            </p>
+          </div>
+          <div>
+            <button><a href="form.html">View Details</a></button>
+            <button>Redeem</button>
+          </div>
+        </div>
+        <div class="card1">
+          <div>
+            <img
+              class="imagecard"
+              src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/offers/lg/BIGSAVE.jpg"
+              alt="No-Image"
+              class="offersImageText-background"
+            />
+          </div>
+          <div>
+            <h1>UPTO RS 100 OFF</h1>
+          </div>
+          <div>
+            <p>
+              Upto Rs 100 off on min cart value of Rs 599 or more . Applicable
+              on 4th order...
+            </p>
+          </div>
+          <div>
+            <button><a href="form.html">View Details</a></button>
+            <button>Redeem</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <div>
+        <img
+          src="//images.ctfassets.net/wtodlh47qxpt/25FSYFuEtGct8NSrtpKe6d/b602f6fe0bf294e6a6dff5d7648bf594/KFC_Logo.svg"
+          alt="KFC LOGO"
+          class="kfc-footer-logo"
+        />
+      </div>
+      <div>
+        <p>KFC Food</p>
+        <p>Menu</p>
+        <p>Order Lookup</p>
+        <p>Gift Card</p>
+        <p>Nutrition & Allergen</p>
+      </div>
+      <div>
+        <p>Support</p>
+        <p>Get Help</p>
+        <p>Contact Us</p>
+        <p>KFC Feedback</p>
+        <p>Privacy Policy</p>
+      </div>
+      <div>
+        <p>Legal</p>
+        <p>Terms and Conditions</p>
+        <p>Privacy Policy</p>
+        <p>Disclaimer</p>
+        <p>Caution Notice</p>
+      </div>
+      <div>
+        <p>KFC India</p>
+        <p>About KFC</p>
+        <p>KFC Care</p>
+        <p>Careers</p>
+        <p>Our Golden Past</p>
+      </div>
+      <div>
+        <img
+          src="//images.ctfassets.net/wtodlh47qxpt/6qgKpWUOIsrIiazhk3cdmF/d60b4c20be69bab1f939bf33348b67e9/Find_KFC.svg"
+          alt=""
+        />
+        <a
+          id="link"
+          target="_blank"
+          tabindex="0"
+          href="https://restaurants.kfc.co.in/"
+          >Find a KFC</a
+        >
+      </div>
+      <div>
+        <img
+          src="https://www.fieldays.co.nz/wp-content/uploads/2021/05/get-it-on-google-play-badge.png"
+        />
+      </div>
+      <div>
+        <img
+          src="https://e7.pngegg.com/pngimages/368/574/png-clipart-apple-store-logo-iphone-app-store-google-play-android-now-button-electronics-text.png"
+        />
+      </div>
+    </div>
+    <div id="base">
+      <div>
+        <p>Copyright © KFC Corporation 2021 All Rights Reserved</p>
+      </div>
+      <div>
+        <img src="//images.ctfassets.net/wtodlh47qxpt/4ZHyPA2EeaoP3aqtNDriBA/463462a9c27b0aa585e12b21ce3766e0/Social_Insta_White.svg" alt="Instagram">
+        <img src="//images.ctfassets.net/wtodlh47qxpt/dKiu2meLcfz2DNwsg7nZw/7194830b1ba6f25b158a23d6b2c4752c/Social_Facebook_White.svg" alt="Facebook">
+        <img src="//images.ctfassets.net/wtodlh47qxpt/78z9x0WwdkdXwGVK726EKX/6599ca34ec88e2a6f46d7d94ed85a8ad/Social_Twitter_White.svg" alt="Twitter">
+      </div>
+    </div>
+  </body>
+</html>
