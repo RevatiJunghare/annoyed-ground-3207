@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #navbar {
+        border: 0px solid red;
+        width: 100%;
+        height: 100px;
+        background-color: white;
+        color: black;
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        margin-top: -20px;
+      }
+      #box1 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        margin-left: 100px;
+      }
+      #menu {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        gap: 35px;
+        font-family: sans-serif;
+        font-size: 14px;
+      }
+      #box2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        margin-right: 140px;
+        gap: 10px;
+      }
+      #sign {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+        font-size: 14px;
+      }
+      #price {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        color: black;
+        font-family: sans-serif;
+        font-size: 14px;
+      }
+      #price > span {
+        margin-left: 35px;
+      }
+      #order {
+        border: 1px solid black;
+        width: 100%;
+        margin-top: 80px;
+        height: 80px;
+        display: flex;
+        position: fixed;
+
+        background-color: black;
+      }
+
+      #order > button {
+        background-color: #e4002b;
+      }
+      #pickup {
+        margin-left: 430px;
+        margin-top: 8px;
+      }
+      #btn {
+        margin-left: 10px;
+        background-color: #e4002b;
+        width: 150px;
+        border-radius: 100px;
+        margin-top: 10px;
+        height: 40px;
+        color: white;
+        padding-top: 9px;
+      }
+      #pickup > h3 {
+        font-size: 15px;
+        font-family: sans-serif;
+        text-align: center;
+        color: #ffffff;
+      }
+      #btn > span {
+        margin: 350px 20px 0px 40px;
+        text-align: center;
+      }
+      #container {
+        border: 0px solid red;
+        width: 85%;
+        margin: auto;
+
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      #menu {
+        width: 35%;
+        border: 0px solid red;
+        
+      }
+      #menu > img {
+        margin-top: -260px;
+        width: 30%;
+        margin-left: 100px;
+        
+      }
+      #menu > h1 {
+        margin-top: 20px;
+        margin-left: -260px;
+        font-size: 30px;
+        font-weight: bold;
+        
+      }
+      #menu > div {
+        margin-left: 100px;
+        margin-top: -600px;
+        width: 220px;
+        border: 0px solid red;
+        font-size: 17px;
+        
+      }
+      #items {
+        border: 0px solid black;
+        width: 850px;
+        height: 800px;
+        margin-top: 200px;
+      }
+      #search {
+        padding: 6px 11px;
+        text-align: center;
+        font-family: sans-serif;
+        font-size: 15px;
+
+        border-radius: 20px;
+      }
+      #line {
+        border: 0px solid black;
+        margin-top: 20px;
+      }
+      #contentofbox {
+        border: 0px solid red;
+        width: 830px;
+        background-color: rgb(240, 244, 244);
+        margin-top: 10px;
+      }
+      #chicken_buckets {
+        border: 0px solid red;
+        width: 830px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .bucket_types {
+        width: 100%;
+        border: 0px solid red;
+        margin: 8px;
+      }
+      .bucket_types > div {
+        width: 100%;
+      }
+      .bucket_types > div > img {
+        width: 100%;
+      }
+      .bucket_types > div:nth-child(2) {
+        font-family: sans-serif;
+        margin: 8px;
+        font-size: 17px;
+      }
+      .bucket_types > div:nth-child(3) > div:nth-child(1) {
+        font-family: sans-serif;
+        margin: 8px;
+        font-size: 15px;
+      }
+      .bucket_types > div:nth-child(3) > div:nth-child(2) {
+        font-family: sans-serif;
+        margin: 8px;
+        font-size: 15px;
+        font-weight: bold;
+      }
+      .bucket_types > div:nth-child(4) {
+        font-family: sans-serif;
+        margin: 8px;
+        font-size: 14px;
+        color: rgb(109, 103, 103);
+      }
+      .addtocart {
+        padding: 11px 50px;
+        background-color: #e4002b;
+        color: #ffffff;
+        font-size: 14px;
+        text-align: center;
+        border: 0px solid #e4002b;
+        border-radius: 20px;
+        margin-top: 8px;
+        margin-left: 9px;
+        margin-bottom: 37px;
+      }
+      #footer {
+        border: 0px solid black;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        justify-content: space-around;
+        background-color: #202124;
+        color: #ffffff;
+        margin-top: 3000px;
+        padding-top: 140px;
+        font-family: sans-serif;
+        padding-bottom: 100px;
+        font-size: 14px;
+      }
+      #footer > div:nth-child(7) {
+        width: 150px;
+        margin-right: 120px;
+      }
+      #footer > div:nth-child(7) > img {
+        width: 100%;
+      }
+      #footer > div:nth-child(8) {
+        width: 150px;
+        margin-left: -100px;
+      }
+      #footer > div:nth-child(8) > img {
+        width: 100%;
+      }
+      #footer > div:nth-child(7) > a {
+        text-decoration: none;
+        color: #ffffff;
+      }
+      #footer > div:nth-child(1) {
+        margin-left: 90px;
+        margin-top: 10px;
+      }
+      #footer > div:nth-child(2) {
+        margin-left: 50px;
+      }
+      #footer > div:nth-child(3) {
+        margin-left: 50px;
+      }
+      #footer > div:nth-child(4) {
+        margin-left: 50px;
+      }
+      #footer > div:nth-child(5) {
+        margin-left: 50px;
+      }
+      #base {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background-color: #202124;
+        border: 0px solid red;
+        color: #ffffff;
+        font-family: sans-serif;
+        font-size: 12px;
+        text-align: center;
+      }
+      #base > div:nth-child(1) {
+        margin-left: 450px;
+      }
+      #base > div:nth-child(2) {
+        margin-left: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar">
+      <div id="box1">
+        <img src="https://online.kfc.co.in/static/media/kfcLogo.492728c6.svg" />
+        <span id="menu">
+          <h4>Menu</h4>
+          <h4>Deals</h4>
+        </span>
+      </div>
+      <div id="box2">
+        <div id="sign">
+          <img
+            src="https://images.ctfassets.net/wtodlh47qxpt/6bJdGLRkksNvWP4LI9ZiFF/cb89d6393492fd093e0f99980abfa39e/Account_Icon.svg"
+          />
+          <h4 id="signin">Sign In</h4>
+        </div>
+        <div id="price">
+          <span class="headerPrice">₹0</span>
+          <img id="bucket"
+            src="//images.ctfassets.net/wtodlh47qxpt/6qtBVFuno7pdwOQ9RIvYm9/d13e9b7242980972cf49beddde2cc295/bucket_cart_icon.svg"
+            alt="Cart icon animation_100% "
+          />
+        </div>
+      </div>
+    </div>
+    <div id="order">
+      <div id="pickup">
+        <h3>LET'S ORDER FOR DELIVERY,PICK UP,OR DINE IN</h3>
+      </div>
+      <div id="btn">
+        <span>Start Order</span>
+      </div>
+    </div>
+
+    <div id="container">
+      <div id="menu" >
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Counting_rod_vertical_red_3.svg/671px-Counting_rod_vertical_red_3.svg.png"
+          alt="stripes"
+          class="stripes-img"
+        />
+        <h1>KFC MENU</h1>
+        <div>
+          <p>CHICKEN BUCKETS</p>
+          <p>NEW LAUNCH</p>
+          <p>BIRYANI BUCKETS</p>
+          <p>BOX MEALS</p>
+          <p>BURGERS</p>
+          <p>STAY HOME SPECIALS</p>
+          <p>SNACKS</p>
+          <p>BEVERAGES</p>
+        </div>
+      </div>
+
+      <div id="items">
+        <div>
+          <input type="search" placeholder="search our menu" id="search" value=""/>
+        </div>
+        <div id="line"></div>
+        <div id="contentofbox">
+          <h1 style="font-family:sans-serif">CHICKEN BUCKETS</h1>
+          <div id="chicken_buckets">
+            <div class="bucket_types">
+              <div>
+                <img
+                  src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00000920.jpg?ver=19.73"
+                  alt=""
+                  data-testid="product-image"
+                  class="menu-product-image"
+                />
+              </div>
+              <div>5pc Leg Piece Bucket Meal</div>
+              <div>
+                <div>Non veg . Serves 2</div>
+                <div>
+                  <span style="text-decoration: line-through">₹829.00 </span
+                  ><span>..</span><span style="color: #e4002b"> ₹619.05</span>
+                </div>
+              </div>
+              <div>
+                Save 22% on 5 chicken Leg Pieces, 2 dips, 1 Medium Fries & a
+                Pepsi PET [serves 2 ]
+              </div>
+
+              <div>
+                <button class="addtocart">Add to Cart</button>
+              </div>
+              <div></div>
+            </div>
+            <div class="bucket_types">
+              <div>
+                <img
+                  src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/lg/D-PR00000892.jpg?ver=19.73"
+                  alt=""
+                  data-testid="product-image"
+                  class="carousal-menu-product-image"
+                />
+              </div>
+              <div>Bucket for Two</div>
+              <div>
+                <div>Non veg . Serves 2-3</div>
+                <div>
+                  <span style="text-decoration: line-through">₹744.00 </span
+                  ><span>..</span><span style="color: #e4002b"> ₹599.05</span>
+                </div>
+              </div>
+              <div>
+                Flat Rs. 115 off on combo of 2pc Hot & Crispy, 2 pc Smoky Red
+                Chicken & Large Popcorn [serves 2-3]
+              </div>
+
+              <div>
+                <button  class="addtocart">Add to Cart</button>
+              </div>
+            </div>
+            <div class="bucket_types">
+              <div>
+                <img
+                  src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/lg/D-K512.jpg?ver=19.73"
+                  alt=""
+                  data-testid="product-image"
+                  class="menu-product-image"
+                />
+              </div>
+              <div>10pc Leg Piece Bucket & 4 Dips</div>
+              <div>
+                <div>Non veg . Serves 3-4</div>
+                <div>
+                  <span style="text-decoration: line-through">₹1330.00 </span
+                  ><span>..</span><span style="color: #e4002b"> ₹899.05</span>
+                </div>
+              </div>
+              <div>
+                Leg before any wicket! Save 29% on 10 Leg Pieces & 4 Dips
+                [serves 3-4]
+              </div>
+
+              <div>
+                <button class="addtocart">Add to Cart</button>
+              </div>
+            </div>
+            <div class="bucket_types">
+              <div>
+                <img
+                  src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/lg/D-K511.jpg?ver=19.73"
+                  alt=""
+                  data-testid="product-image"
+                  class="menu-product-image"
+                />
+              </div>
+              <div>5pc Leg Piece Bucket & 2 Dips</div>
+              <div>
+                <div>Non veg . Serves 2</div>
+                <div>
+                  <span style="text-decoration: line-through">₹665.00 </span
+                  ><span>..</span><span style="color: #e4002b"> ₹499.05</span>
+                </div>
+              </div>
+              <div>
+                Save Rs. 141 on this favorite combo of 5 Leg Pieces & 2 Dips
+                [serves 2]
+              </div>
+
+              <div>
+                <button  class="addtocart">Add to Cart</button>
+              </div>
+            </div>
+            <div class="bucket_types">
+              <div>
+                <img
+                  src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/lg/D-PR00000638.jpg?ver=19.73"
+                  alt=""
+                  data-testid="product-image"
+                  class="menu-product-image"
+                />
+              </div>
+              <div>Ultimate Savings Bucket</div>
+              <div>
+                <div>Non veg . Serves 2-3</div>
+                <div>
+                  <span style="text-decoration: line-through">₹1094.00 </span
+                  ><span>..</span><span style="color: #e4002b"> ₹699.05</span>
+                </div>
+              </div>
+              <div>
+                Save 35% on signature bucket of 4pc Hot & crispy, 6 Wings, 4
+                strips, 3 Dips & Pepsi PET [serves 2-3 ]
+              </div>
+
+              <div>
+                <button  class="addtocart">Add to Cart</button>
+              </div>
+            </div>
+            <div class="bucket_types">
+              <div>
+                <img
+                  src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00000891.jpg?ver=19.74"
+                  alt=""
+                  data-testid="product-image"
+                  class="menu-product-image"
+                />
+              </div>
+              <div>Big 8</div>
+              <div>
+                <div>Non veg . Serves 2-3</div>
+                <div>
+                  <span style="text-decoration: line-through">₹1008.00 </span
+                  ><span>..</span><span style="color: #e4002b"> ₹684.76</span>
+                </div>
+              </div>
+              <div>
+                Save 29% on this variety bucket of 4pc Hot & Crispy chicken &
+                4pc Smoky Red chicken [serves 2- 3 ]
+              </div>
+
+              <div>
+                <button  class="addtocart">Add to Cart</button>
+              </div>
+            </div>
+            <div class="bucket_types">
+              <div>
+                <img
+                  src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-K445.jpg?ver=19.74"
+                  alt=""
+                  data-testid="product-image"
+                  class="menu-product-image"
+                />
+              </div>
+              <div>5pc Smoky Red Chicken</div>
+              <div>
+                <div>Non veg . Serves 2</div>
+                <div>
+                  <span style="text-decoration: line-through">₹655.00 </span
+                  ><span>..</span><span style="color: #e4002b"> ₹499.05</span>
+                </div>
+              </div>
+              <div>
+                Flat 20% off on 5pc Smoky red grilled chicken [serves 2]
+              </div>
+
+              <div>
+                <button class="addtocart">Add to Cart</button>
+              </div>
+            </div>
+            <div class="bucket_types">
+              <div>
+                <img
+                  src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-K009.jpg?ver=19.74"
+                  alt=""
+                  data-testid="product-image"
+                  class="menu-product-image"
+                />
+              </div>
+              <div>8 pc Hot & Crispy Chicken</div>
+              <div>
+                <div>Non veg . Serves 3-4</div>
+                <div>
+                  <span style="text-decoration: line-through">₹968.00 </span
+                  ><span>..</span><span style="color: #e4002b"> ₹748.57</span>
+                </div>
+              </div>
+              <div>
+                Save Rs. 182 & get 8pc signature Hot & crispy chicken [serves
+                3-4]
+              </div>
+
+              <div>
+                <button  class="addtocart">Add to Cart</button>
+              </div>
+            </div>
+            <div class="bucket_types">
+              <div>
+                <img
+                  src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-K012.jpg?ver=19.74"
+                  alt=""
+                  data-testid="product-image"
+                  class="menu-product-image"
+                />
+              </div>
+              <div>6 pc Hot & Crispy Chicken</div>
+              <div>
+                <div>Non veg . Serves 2-3</div>
+                <div>
+                  <span style="text-decoration: line-through">₹726.00 </span
+                  ><span>..</span><span style="color: #e4002b"> ₹619.05</span>
+                </div>
+              </div>
+              <div>
+                Flat 10% off on 6pc signature Hot & crispy chicken [serves 2-3]
+              </div>
+
+              <div>
+                <button  class="addtocart">Add to Cart</button>
+              </div>
+            </div>
+            <div class="bucket_types">
+              <div>
+                <img
+                  src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00000687.jpg?ver=19.74"
+                  alt=""
+                  data-testid="product-image"
+                  class="menu-product-image"
+                />
+              </div>
+              <div>6 pc Hot & Crispy Chicken</div>
+              <div>
+                <div>Non veg</div>
+                <div>
+                  <span style="text-decoration: line-through">₹612.00 </span
+                  ><span>..</span><span style="color: #e4002b"> ₹419.05</span>
+                </div>
+              </div>
+              <div>
+                Save 27% on this combo Chicken Zinger, Large Popcorn & 4pc Hot
+                Wings
+              </div>
+
+              <div>
+                <button  class="addtocart">Add to Cart</button>
+              </div>
+            </div>
+            <div class="bucket_types">
+              <div>
+                <img
+                  src="https://orderserv-kfc-assets.yum.com/15895bb59f7b4bb588ee933f8cd5344a/images/items/xl/D-PR00000571.jpg?ver=19.74"
+                  alt=""
+                  data-testid="product-image"
+                  class="menu-product-image"
+                />
+              </div>
+              <div>Chick & Share</div>
+              <div>
+                <div>Non veg . Serves 2</div>
+                <div>
+                  <span style="text-decoration: line-through"> </span
+                  ><span>..</span><span style="color: #e4002b"> ₹448.47</span>
+                </div>
+              </div>
+              <div>
+                Save 22% & Pick any - 5pc Hot & Crispy OR 10 chicken strips OR 2 Large Popcorn [serves 2]
+              </div>
+
+              <div>
+                <button  class="addtocart">Add to Cart</button>
+              </div>
+            </div>
+            
+          </div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+
+    </div>
+    <div></div>
+    
+  </body>
+  <div id="footer">
+    <div>
+      <img
+        src="//images.ctfassets.net/wtodlh47qxpt/25FSYFuEtGct8NSrtpKe6d/b602f6fe0bf294e6a6dff5d7648bf594/KFC_Logo.svg"
+        alt="KFC LOGO"
+        class="kfc-footer-logo"
+      />
+    </div>
+    <div>
+      <p>KFC Food</p>
+      <p>Menu</p>
+      <p>Order Lookup</p>
+      <p>Gift Card</p>
+      <p>Nutrition & Allergen</p>
+    </div>
+    <div>
+      <p>Support</p>
+      <p>Get Help</p>
+      <p>Contact Us</p>
+      <p>KFC Feedback</p>
+      <p>Privacy Policy</p>
+    </div>
+    <div>
+      <p>Legal</p>
+      <p>Terms and Conditions</p>
+      <p>Privacy Policy</p>
+      <p>Disclaimer</p>
+      <p>Caution Notice</p>
+    </div>
+    <div>
+      <p>KFC India</p>
+      <p>About KFC</p>
+      <p>KFC Care</p>
+      <p>Careers</p>
+      <p>Our Golden Past</p>
+    </div>
+    <div>
+      <img
+        src="//images.ctfassets.net/wtodlh47qxpt/6qgKpWUOIsrIiazhk3cdmF/d60b4c20be69bab1f939bf33348b67e9/Find_KFC.svg"
+        alt=""
+      />
+      <a
+        id="link"
+        target="_blank"
+        tabindex="0"
+        href="https://restaurants.kfc.co.in/"
+        >Find a KFC</a
+      >
+    </div>
+    <div>
+      <img
+        src="https://www.fieldays.co.nz/wp-content/uploads/2021/05/get-it-on-google-play-badge.png"
+      />
+    </div>
+    <div>
+      <img
+        src="https://e7.pngegg.com/pngimages/368/574/png-clipart-apple-store-logo-iphone-app-store-google-play-android-now-button-electronics-text.png"
+      />
+    </div>
+  </div>
+  <div id="base">
+    <div>
+      <p>Copyright © KFC Corporation 2021 All Rights Reserved</p>
+    </div>
+    <div>
+      <img
+        src="//images.ctfassets.net/wtodlh47qxpt/4ZHyPA2EeaoP3aqtNDriBA/463462a9c27b0aa585e12b21ce3766e0/Social_Insta_White.svg"
+        alt="Instagram"
+      />
+      <img
+        src="//images.ctfassets.net/wtodlh47qxpt/dKiu2meLcfz2DNwsg7nZw/7194830b1ba6f25b158a23d6b2c4752c/Social_Facebook_White.svg"
+        alt="Facebook"
+      />
+      <img
+        src="//images.ctfassets.net/wtodlh47qxpt/78z9x0WwdkdXwGVK726EKX/6599ca34ec88e2a6f46d7d94ed85a8ad/Social_Twitter_White.svg"
+        alt="Twitter"
+      />
+    </div>
+  </div>
+</html>
+
+<script>
+  let signin=document.querySelector("#signin")
+  signin.addEventListener("click",gotosignin)
+
+
+  function gotosignin(){
+    window.location.href="signin.html"
+  } 
+
+
+  
+
+  let bucket=document.querySelector("#bucket")
+  let buttn=document.querySelector("#btn")
+  let bttn1=document.querySelector(".addtocart") 
+  let search=document.querySelector("#search")
+  
+  bucket.addEventListener("click",function(){
+    window.location.href="order.html"
+  })
+
+  buttn.addEventListener("click",function(){
+    window.location.href="order.html"
+  })
+
+  bttn1.addEventListener("click",function(){
+    window.location.href="order.html"
+  })
+
+  
+  
+</script>
